@@ -1,0 +1,24 @@
+import javax.swing.*;
+import java.awt.*;
+
+public class Main {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Label and Image");
+        frame.setSize(400, 350);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLayout(new FlowLayout());
+
+        JLabel label = new JLabel("Welcome to Java GUI");
+        frame.add(label);
+
+        ImageIcon icon = new ImageIcon("image.jpg");
+        Image img = icon.getImage().getScaledInstance(
+            200, 200, Image.SCALE_SMOOTH
+        );
+
+        JLabel imageLabel = new JLabel(new ImageIcon(img));
+        frame.add(imageLabel);
+
+        frame.setVisible(true);
+    }
+}
